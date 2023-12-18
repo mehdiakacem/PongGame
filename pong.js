@@ -101,9 +101,9 @@ function movePaddle(evt){
 
 // reset ball
 function resetBall(){
+    ball.speed = 5;
     ball.x = canvas.width/2;
     ball.y = canvas.height/2;
-    ball.speed = 5;
     ball.velocityX = -ball.velocityX;
 }
 
@@ -143,8 +143,8 @@ function update(){
 
     // update the score
     if (ball.x - ball.radius < 0){
-        com.score++;
         resetBall();
+        com.score++;
     }else if (ball.x + ball.radius > canvas.width){
         user.score++;
         resetBall();
